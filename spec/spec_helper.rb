@@ -12,6 +12,10 @@ Spork.prefork do
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+ 
+end
+
+Spork.each_run do
   
   RSpec.configure do |config|
     # == Mock Framework
@@ -30,7 +34,4 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = true
   end
-end
-
-Spork.each_run do
 end
