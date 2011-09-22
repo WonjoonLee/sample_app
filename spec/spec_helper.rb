@@ -35,3 +35,8 @@ Spork.each_run do
     config.use_transactional_fixtures = true
   end
 end
+
+
+def test_sign_in(user)
+  controller.sign_in(user)
+end
